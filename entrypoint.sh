@@ -7,7 +7,7 @@ if [ -d /mnt/proc ]; then
   mount -o bind /mnt/proc /proc
 fi
 
-if [ -z "$@" ]; then
+if [[ -z "$@" ]]; then
   exec /usr/sbin/collectd -C /etc/collectd/collectd.conf -f
 else
   exec $@
